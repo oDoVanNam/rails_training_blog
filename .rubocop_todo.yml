@@ -1,0 +1,97 @@
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Metrics/BlockLength:
+  Max: 140
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/UselessAccessModifier:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/RedundantCondition:
+  Enabled: true
+
+Style/TernaryParentheses:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+
+Style/BlockDelimiters:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/WordArray:
+  MinSize: 3
+
+Style/RescueStandardError:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 100
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Metrics/BlockNesting:
+  Max: 5
+
+Metrics/MethodLength:
+  Max: 100
+
+Metrics/ClassLength:
+  Max: 500
+
+Metrics/ModuleLength:
+  Max: 500
+
+Naming/PredicateName:
+  ForbiddenPrefixes:
+    - "is_"
+    - "have_"
+  NamePrefix:
+    - "is_"
+    - "have_"
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Style/Documentation:
+  Enabled: false

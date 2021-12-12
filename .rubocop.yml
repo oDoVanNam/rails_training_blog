@@ -1,0 +1,19 @@
+inherit_from: .rubocop_todo.yml
+
+# Common configuration.
+AllCops:
+  # Include gemspec and Rakefile
+  Include:
+    - '**/*.rb'
+    - '**/*.gemspec'
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+  NewCops: enable

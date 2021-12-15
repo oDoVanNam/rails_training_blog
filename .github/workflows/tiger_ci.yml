@@ -1,0 +1,52 @@
+name: TigerCI
+on: pull_request
+jobs:
+  audit:
+    name: bundle audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+      - name: Check bundle audit
+        run: bundle exec bundle-audit check --update
+  rubocop:
+    name: rubocop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+      - name: Rubocop
+        run: bundle exec rubocop
+  rspec:
+    name: rspec
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0.27
+        env:
+          MYSQL_ROOT_PASSWORD: Aa@123456
+        ports:
+          - "3306:3306"
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Rspec
+        env:
+          DATABASE_USERNAME: root
+          DATABASE_PASSWORD: Aa@123456
+        run: bundle exec rspec
